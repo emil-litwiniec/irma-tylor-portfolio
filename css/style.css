@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.content-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+}
+
+.header {
+  background-color: #ffffff;
+  grid-column: 1/2;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.09);
+}
+
+.main {
+  background-color: #f0f0f0;
+  grid-column: 2/-1;
+  overflow-y: scroll;
+}
+
+.side-menu {
+  margin: 10rem 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.side-menu__header--title {
+  font-size: 4.5rem;
+  text-align: right;
+  font-weight: 400;
+}
+.side-menu__header--description {
+  font-weight: 400;
+}
+.nav {
+  list-style: none;
+  text-align: right;
+}
+.nav--left {
+  text-align: left;
+}
+
+/*# sourceMappingURL=style.css.map */

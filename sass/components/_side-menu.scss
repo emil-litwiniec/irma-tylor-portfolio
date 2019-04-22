@@ -1,0 +1,33 @@
+.side-menu {
+
+    margin: 10rem 5rem;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+
+        &--title {
+            font-size: 4.5rem;
+            text-align: right;
+            font-weight: 400;
+        }
+
+        &--description {
+            font-weight: 400;
+        }
+    }
+
+    &__nav {}
+}
+
+.nav {
+
+    list-style: none;
+    text-align: right;
+
+    &--left {
+        text-align: left;
+    }
+}
+
+.nav-button {}
