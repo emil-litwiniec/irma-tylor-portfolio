@@ -31,28 +31,130 @@ body {
 .main {
   background-color: #f0f0f0;
   grid-column: 2/-1;
-  overflow-y: scroll;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.test {
+  margin-top: 10rem;
+  height: 50rem;
+  width: 20rem;
+  background-color: green;
+}
+
+.test-container {
+  grid-column: 2/3;
+  height: 100vh;
+}
+
+.simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+  /* When hovered, remove all transitions from drag handle */
+  opacity: 0.2 !important;
+  transition: opacity 0s linear;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  min-width: 5px !important;
+  width: 5px !important;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  right: 2px;
+  width: 3px !important;
+  min-height: 10px;
 }
 
 .side-menu {
-  margin: 10rem 5rem;
+  margin: 14rem 4rem 10rem 7rem;
   display: flex;
   flex-direction: column;
 }
+.side-menu__header {
+  position: relative;
+}
 .side-menu__header--title {
-  font-size: 4.5rem;
+  font-size: 5rem;
   text-align: right;
   font-weight: 400;
+  color: #565656;
 }
 .side-menu__header--description {
+  font-size: 1.5rem;
+  top: 4.3rem;
+  position: absolute;
   font-weight: 400;
+  right: 8.4rem;
+  max-width: 100%;
+  min-width: 14rem;
+  color: #3f3f3f;
 }
+.side-menu__nav {
+  margin-top: 10rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+
 .nav {
   list-style: none;
   text-align: right;
+  color: #3f3f3f;
+  font-weight: 300;
+}
+.nav li {
+  margin-bottom: 1rem;
 }
 .nav--left {
   text-align: left;
+  margin-bottom: 4rem !important;
+  margin-top: 4rem;
+  margin-left: 10rem;
+}
+
+.nav-button {
+  text-decoration: none;
+  color: #3f3f3f;
+  position: relative;
+}
+.nav-button:hover {
+  color: #0c0c0c;
+}
+.nav-button:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  left: -3rem;
+  background-color: #b0b0b0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.nav-button:hover:before {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
+}
+
+.nav-frame {
+  position: absolute;
+  height: 35rem;
+  width: 1rem;
+  top: 5rem;
+  left: 4rem;
+  border-top: 1px solid #b0b0b0;
+  border-left: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+  color: #b0b0b0;
+}
+.nav-frame__text {
+  position: absolute;
+  top: 22rem;
+  transform: rotate(270deg);
+  color: #b0b0b0;
 }
 
 /*# sourceMappingURL=style.css.map */

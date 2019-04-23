@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Martel|Playfair+Display:700i"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <title>Irma Tylor</title>
 </head>
 
@@ -22,7 +23,11 @@
                 </section>
 
                 <nav class="side-menu__nav">
+
+                    <div class="nav-frame"></div>
+                    <div class="nav-frame__text">works</div>
                     <ul class="nav">
+
                         <li class="nav--left">costume design / fashion</li>
                         <li><a class="nav-button" href="#">Super Lights: Story of Love</a></li>
                         <li><a class="nav-button" href="#">Fashion Project 2</a></li>
@@ -33,7 +38,11 @@
                         <li><a class="nav-button" href="#">Graphic Project 2</a></li>
                         <li><a class="nav-button" href="#">Graphic Project 3</a></li>
                         <li><a class="nav-button" href="#">Graphic Project 4</a></li>
-                        <li class="nav--left"><a class="nav-button" href="#">About</a></li>
+
+
+
+
+                        <li class="nav--left"><a class="nav-button" href="#">about</a></li>
 
                     </ul>
 
@@ -45,15 +54,20 @@
         </header>
 
         <main class="main">
-            <div class="test"></div>
-            <div class="test"></div>
-            <div class="test"></div>
+
+            <div class="test-container" data-simplebar>
+                <div class="test"></div>
+                <div class="test"></div>
+                <div class="test"></div>
+            </div>
 
         </main>
 
     </div>
 
     <script src="app.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
 </body>
 
 </html>
