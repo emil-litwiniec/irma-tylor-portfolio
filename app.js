@@ -46,6 +46,11 @@ previews.forEach(preview => preview.addEventListener('mouseleave', slideOut));
 
 
 
+const mainContentWrapper = new SimpleBar(document.querySelector('.main-content-wrapper'));
+
+const showScroll = (e) => {
+    console.log(e);
+}
 
 const simplebarContentWrapper = document.querySelector('.simplebar-content-wrapper');
 
