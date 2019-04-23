@@ -23,23 +23,19 @@
 
     display: grid;
 
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: .8fr 4fr 1fr;
     // overflow-y: scroll;
 
 
 }
 
-.test {
-    // grid-column: 2 / 3;
-    margin-top: 10rem;
-    height: 50rem;
-    width: 20rem;
-    background-color: green;
-}
 
-.test-container {
+
+.main-content-wrapper {
     grid-column: 2 / 3;
     height: 100vh;
+
+
 }
 
 .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
