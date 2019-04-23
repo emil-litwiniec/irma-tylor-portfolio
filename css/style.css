@@ -72,6 +72,8 @@ body {
   background-color: green;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.09);
+  position: relative;
+  overflow: hidden;
 }
 .preview img {
   object-fit: cover;
@@ -84,12 +86,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.preview--1 :hover:before {
-  visibility: visible;
-  opacity: 1;
-  left: 0rem;
-}
-.preview--1 :before {
+.preview--1-active {
   transition: all 0.2s ease-in-out;
   content: "Super Lights: Story of Love";
   color: #f0f0f0;
@@ -97,8 +94,28 @@ body {
   font-style: italic;
   font-weight: bold;
   font-size: 78.4613px;
-  visibility: hidden;
-  opacity: 0;
+  top: -2.6rem;
+  left: -40rem;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgba(43, 98, 216, 0.56) 0%, rgba(125, 185, 232, 0) 100%);
+}
+.preview--2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  position: relative;
+}
+
+.over-picture {
+  transition: all 0.2s ease-in-out;
+  content: "Super Lights: Story of Love";
+  color: #f0f0f0;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 78.4613px;
   top: -2.6rem;
   left: -40rem;
   display: block;
@@ -106,10 +123,6 @@ body {
   height: 117%;
   width: 100%;
   background: linear-gradient(to right, rgba(43, 98, 216, 0.56) 0%, rgba(125, 185, 232, 0) 100%);
-}
-.preview--2 {
-  grid-column: 2/3;
-  grid-row: 1/2;
 }
 
 .side-menu {
