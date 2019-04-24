@@ -62,9 +62,29 @@
 /// PROJECT PAGE
 
 .project-content {
+    animation: .4s ease-out 0s 1 fadeIn;
     height: 200vh;
     // width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0 8rem;
+}
+
+// ABOUT PAGE
+
+.about-content {
+    animation: .4s ease-out 0s 1 fadeIn;
+    height: 100vh;
+    width: 100%;
+    padding: 10rem 0;
+
+    font-size: 1.5rem;
+    color: $gray-m;
+
+    display: grid;
+
+    grid-template: "a b b"22rem
+                   "c d e"40rem / 1.2fr 1fr 1fr;
+    
+    padding-top: 17rem;
 }

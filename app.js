@@ -1,3 +1,5 @@
+// LAZY LOADING //
+
 const images = window.document.querySelectorAll('source, img');
 
 const config = {
@@ -5,16 +7,12 @@ const config = {
     threshold: 0.01
 };
 let onIntersection = (entries) => {
-
     entries.forEach(entry => {
         if (entry.intersectionRatio > 0) {
-            // Stop watching and load the image
             observer.unobserve(entry.target);
-            // call our method: preloadImage
             preloadImage(entry.target);
         }
     });
-
 }
 
 let observer;
@@ -22,20 +20,15 @@ let observer;
 let preloadImage = (element) => {
     if (element.dataset && element.dataset.src) {
         element.src = element.dataset.src;
-
     }
-
     if (element.dataset && element.dataset.srcset) {
         element.srcset = element.dataset.srcset
     }
-
 }
 
-// If we don't have support for intersection observer, load the images immediately
 if (!('IntersectionObserver' in window)) {
     Array.from(images).forEach(image => preloadImage(image));
 } else {
-    // It is supported, load the images by calling our method: onIntersection
     observer = new IntersectionObserver(onIntersection, config);
     images.forEach(image => {
         observer.observe(image);
@@ -43,11 +36,7 @@ if (!('IntersectionObserver' in window)) {
 
 }
 
-
-
-
-
-
+// HOVER OVER PROJECTS EFFECT //
 
 const previews = document.querySelectorAll('.preview');
 const menuLinks = document.querySelectorAll('.nav-button');
@@ -83,6 +72,7 @@ previews.forEach(preview => preview.addEventListener('mouseenter', slideIn));
 previews.forEach(preview => preview.addEventListener('mouseleave', slideOut));
 
 
+// SCROLL TO TOP //
 
 const mainContentWrapper = new SimpleBar(document.querySelector('.main-content-wrapper'));
 
@@ -107,13 +97,18 @@ const showElement = (e) => {
 
     if (scrollTop > 0) {
         scrollToTopBtn.style.opacity = 0.2;
+        scrollToTopBtn.style.visibility = "visible";
     } else {
         scrollToTopBtn.style.opacity = 0;
+        scrollToTopBtn.style.visibility = "hidden";
     }
 }
 
 scrollToTopBtn.addEventListener('click', scrollToTop);
 simplebarContentWrapper.addEventListener('scroll', showElement);
+
+
+
 
 
 

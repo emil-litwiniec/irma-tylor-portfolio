@@ -61,10 +61,146 @@ body {
 }
 
 .project-content {
+  animation: 0.4s ease-out 0s 1 fadeIn;
   height: 200vh;
   display: flex;
   flex-direction: column;
   margin: 0 8rem;
+}
+
+.about-content {
+  animation: 0.4s ease-out 0s 1 fadeIn;
+  height: 100vh;
+  width: 100%;
+  padding: 10rem 0;
+  font-size: 1.5rem;
+  color: #b0b0b0;
+  display: grid;
+  grid-template: "a b b" 22rem "c d e" 40rem/1.2fr 1fr 1fr;
+  padding-top: 17rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.info {
+  grid-area: b;
+}
+.info__text {
+  text-align: justify;
+  font-size: 1.33rem;
+}
+
+p {
+  font-size: 1.15rem;
+  font-family: "Martel", serif;
+  font-weight: 300;
+  color: #3f3f3f;
+  text-align: right;
+}
+
+.frame {
+  border-top: solid 1px #b0b0b0;
+  border-bottom: solid 1px #b0b0b0;
+  border-left: solid 1px #b0b0b0;
+}
+
+.contact {
+  grid-area: a;
+  display: flex;
+  display: flex;
+  height: 10rem;
+  align-items: center;
+}
+.contact__description {
+  display: flex;
+  height: inherit;
+  width: 4rem;
+  align-items: center;
+  position: relative;
+}
+.contact__description:before {
+  content: "contact";
+  position: absolute;
+  left: -1.1rem;
+  transform: rotate(270deg);
+}
+.contact__frame {
+  height: 100%;
+  width: 1rem;
+  margin-left: 3rem;
+}
+.contact__text {
+  margin-left: auto;
+  margin-right: 7rem;
+}
+
+.exhibitions {
+  grid-area: c;
+  display: flex;
+  height: 40rem;
+  align-items: center;
+}
+.exhibitions__description {
+  display: flex;
+  height: inherit;
+  width: 4rem;
+  align-items: center;
+  position: relative;
+}
+.exhibitions__description:before {
+  content: "exhibitions";
+  position: absolute;
+  left: -2.1rem;
+  transform: rotate(270deg);
+}
+.exhibitions__frame {
+  height: 100%;
+  width: 1rem;
+  margin-left: 3rem;
+}
+.exhibitions__text {
+  margin-left: auto;
+  margin-right: 7rem;
+}
+
+.education {
+  grid-area: d;
+  display: flex;
+  display: flex;
+  height: 30rem;
+  align-items: center;
+}
+.education__description {
+  display: flex;
+  height: inherit;
+  width: 4rem;
+  align-items: center;
+  position: relative;
+}
+.education__description:before {
+  content: "education";
+  position: absolute;
+  left: -2rem;
+  transform: rotate(270deg);
+}
+.education__frame {
+  height: 100%;
+  width: 1rem;
+  margin-left: 3rem;
+}
+.portrait {
+  grid-area: e;
+}
+.portrait picture img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
 }
 
 .projects {
@@ -72,6 +208,7 @@ body {
   grid-template: repeat(3, 40rem)/repeat(3, 32rem);
   grid-gap: 3rem;
   margin: 10rem 0;
+  animation: 0.3s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 fadeIn;
 }
 
 .preview {
@@ -127,10 +264,11 @@ body {
   transition: all 0.4s ease-in-out;
   border-style: none;
   cursor: pointer;
+  visibility: hidden;
 }
 .scroll-to-top:hover {
   background: none;
-  opacity: 1;
+  opacity: 1 !important;
 }
 .scroll-to-top:before {
   content: "";
