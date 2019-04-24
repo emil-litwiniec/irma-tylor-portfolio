@@ -60,6 +60,13 @@ body {
   min-height: 10px;
 }
 
+.project-content {
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 8rem;
+}
+
 .projects {
   display: grid;
   grid-template: repeat(3, 40rem)/repeat(3, 32rem);
@@ -86,22 +93,6 @@ body {
   grid-row: 1/2;
   position: relative;
   overflow: hidden;
-}
-.preview--1-active {
-  transition: all 0.2s ease-in-out;
-  content: "Super Lights: Story of Love";
-  color: #f0f0f0;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 78.4613px;
-  top: -2.6rem;
-  left: -40rem;
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, rgba(43, 98, 216, 0.56) 0%, rgba(125, 185, 232, 0) 100%);
 }
 .preview--2 {
   grid-column: 2/3;
@@ -156,6 +147,69 @@ body {
   height: 3rem;
 }
 
+.project-content {
+  color: #646464;
+}
+
+.project__header-title {
+  font-size: 4.2rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  text-align: center;
+  margin: 12rem 0 0 0;
+}
+.project__header-paragraph {
+  font-size: 1.2rem;
+  font-family: "Martel", serif;
+  text-align: justify;
+  margin: 4rem 8rem 8rem 8rem;
+}
+
+.project__paragraph {
+  font-size: 1.2rem;
+  font-family: "Martel", serif;
+  text-align: justify;
+  margin: 6rem 8rem;
+}
+
+.project__image-group--1 {
+  display: grid;
+  grid-template: "img1 img2" 70rem "img3 img3" 70rem/1fr 1fr;
+  grid-gap: 2rem;
+}
+.project__image-group--1 picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.project__image-group--1a {
+  grid-area: img1;
+}
+.project__image-group--1b {
+  grid-area: img2;
+}
+.project__image-group--1c {
+  grid-area: img3;
+}
+.project__image-group--2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project__image-group--2 picture:last-child {
+  margin-bottom: 8rem;
+}
+.project__image-group--2 picture {
+  margin-bottom: 2rem;
+}
+.project__image-group--2 picture img {
+  height: 80rem;
+  width: 70rem;
+  object-fit: cover;
+}
+
 .side-menu {
   margin: 14rem 4rem 10rem 7rem;
   display: flex;
@@ -168,6 +222,10 @@ body {
   font-size: 5rem;
   text-align: right;
   font-weight: 400;
+  color: #565656;
+}
+.side-menu__header--title a {
+  text-decoration: none;
   color: #565656;
 }
 .side-menu__header--description {

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Martel|Playfair+Display:700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <title>Irma Tylor</title>
+</head>
+
+<body>
+
+    <div class="content-wrapper">
+        <header class="header">
+            <div class="side-menu">
+                <section class="side-menu__header">
+                    <h1 class="side-menu__header--title"><a href="/">irma tylor</a></h1>
+                    <h3 class="side-menu__header--description">creative artist & designer</h1>
+                </section>
+
+                <nav class="side-menu__nav">
+
+                    <div class="nav-frame"></div>
+                    <div class="nav-frame__text">works</div>
+                    <ul class="nav">
+
+                        <li class="nav--left">costume design / fashion</li>
+                        <li><a class="nav-button" href="/project-name.html" id="menuLink1" data-id="project1">Super Lights: Story of
+                                Love</a></li>
+                        <li><a class="nav-button" href="#" id="menuLink2" data-id="project2">Fashion Project 2</a></li>
+                        <li><a class="nav-button" href="#" id="menuLink3" data-id="project3">Fashion Project 3</a></li>
+                        <li><a class="nav-button" href="#" id="menuLink4" data-id="project4">Fashion Project 4</a></li>
+                        <li class="nav--left">graphics</li>
+                        <li><a class="nav-button" href="#" id="menuLink5" data-id="project5">Graphic Project 1</a></li>
+                        <li><a class="nav-button" href="#" id="menuLink6" data-id="project6">Graphic Project 2</a></li>
+                        <li><a class="nav-button" href="#" id="menuLink7" data-id="project7">Graphic Project 3</a></li>
+                        <li><a class="nav-button" href="#" id="menuLink8" data-id="project8">Graphic Project 4</a></li>
+
+
+
+
+                        <li class="nav--left"><a class="nav-button" href="/about.html">about</a></li>
+
+                    </ul>
+
+                </nav>
+
+
+            </div>
+
+        </header>
+
+        <main class="main">
+
+            <button class="scroll-to-top">
+                <img class="scroll-to-top__img" src="/images/arrow-up.svg" alt="scroll to top">
+            </button>
+
+            <div class="main-content-wrapper" data-simplebar>
+                <section class="project-content">
+
+                    <article class="project__header">
+                        <h2 class="project__header-title">Super Lights: Story of Love</h2>
+                        <p class="project__header-paragraph">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.</p>
+                    </article>
+                    <div class="project__image-group--1">
+                        <picture class="project__image-group--1a">
+
+                                <source media='(max-width: 768px)' data-srcset='images/mock-photos-irma/project_photo_5.jpg'>
+
+                            <source media='(min-width: 768px)' data-srcset='images/mock-photos-irma/project_photo_1.jpg'>
+                            
+                            <img src="images/cat_small.jpg"
+                                alt="Project image"
+                                data-src=images/mock-photos-irma/project_photo_5.jpg>
+                            </picture>
+                       
+
+                        <picture
+                                class="project__image-group--1b"><img src="images/mock-photos-irma/project_photo_2.jpg"
+                                alt="Project image"></picture>
+
+                        <picture class="project__image-group--1c"><img src="images/mock-photos-irma/photo_1.jpg"
+                                alt="Project image"></picture>
+                    </div>
+                    <article class="project__paragraph">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                        qui officia deserunt mollit anim id est laborum.</article>
+                    <div class="project__image-group--2">
+                        <picture><img src="images/mock-photos-irma/project_photo_4.jpg" alt="Project image"></picture>
+                        <picture><img src="images/mock-photos-irma/project_photo_5.jpg" alt="Project image"></picture>
+                    </div>
+
+                </section>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

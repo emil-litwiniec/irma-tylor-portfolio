@@ -58,3 +58,13 @@
     width: 3px !important;
     min-height: 10px;
 }
+
+/// PROJECT PAGE
+
+.project-content {
+    height: 200vh;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 8rem;
+}

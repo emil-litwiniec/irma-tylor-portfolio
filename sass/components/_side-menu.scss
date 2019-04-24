@@ -12,6 +12,11 @@
             text-align: right;
             font-weight: 400;
             color: $off-black;
+
+            a {
+                text-decoration: none;
+                color: $off-black;
+            }
         }
 
         &--description {

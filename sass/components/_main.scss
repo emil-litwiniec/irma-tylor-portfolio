@@ -25,59 +25,6 @@
         grid-row: 1 / 2;
         position: relative;
         overflow: hidden;
-
-        &-active {
-            transition: all .2s ease-in-out;
-            content: 'Super Lights: Story of Love';
-            color: $gray-background;
-            font-family: $font-para;
-            font-style: italic;
-            font-weight: bold;
-            font-size: 78.4613px;
-            // line-height: 122px;
-            // visibility: hidden;
-            // opacity: 0;
-            top: -2.6rem;
-            left: -40rem;
-            display: block;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(to right, rgba(43, 98, 216, 0.56) 0%, rgba(125, 185, 232, 0) 100%);
-        }
-
-
-        // :hover:before {
-        //     visibility: visible;
-        //     opacity: 1;
-        //     left: 0rem;
-        // }
-
-        // :before {
-        //     transition: all .2s ease-in-out;
-        //     content: 'Super Lights: Story of Love';
-        //     color: $gray-background;
-        //     font-family: $font-para;
-        //     font-style: italic;
-        //     font-weight: bold;
-        //     font-size: 78.4613px;
-        //     // line-height: 122px;
-        //     visibility: hidden;
-        //     opacity: 0;
-        //     top: -2.6rem;
-        //     left: -40rem;
-        //     display: block;
-        //     position: absolute;
-        //     height: 117%;
-        //     width: 100%;
-        //     background: linear-gradient(to right, rgba(43, 98, 216, 0.56) 0%, rgba(125, 185, 232, 0) 100%);
-
-        // }
-
-        // img:hover {
-        //     // background-color: rgba(0, 0, 0, .2);
-        //     filter: grayscale(50%);
-        // }
     }
 
     &--2 {
@@ -91,7 +38,7 @@
     transition: all .3s ease-in-out;
     content: 'Super Lights: Story of Love';
     color: $gray-background;
-    font-family: $font-para;
+    font-family: $font-titles;
     font-style: italic;
     font-weight: bold;
     font-size: 78.4613px;
