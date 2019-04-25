@@ -108,6 +108,27 @@ scrollToTopBtn.addEventListener('click', scrollToTop);
 simplebarContentWrapper.addEventListener('scroll', showElement);
 
 
+// TOGGLE SIDE MENU BTN
+
+const showMenuBtn = document.querySelector('.side-menu-btn');
+const header = document.querySelector('.header');
+
+const toggleMenuBtn = (e) => {
+    let isActive = showMenuBtn.classList[1] ? true : false;
+    console.log(isActive);
+
+    if(isActive) {
+        showMenuBtn.classList.remove("side-menu-btn--active");
+        header.classList.remove("side-menu--active");
+    } else if (!isActive) {
+        showMenuBtn.classList.add("side-menu-btn--active");
+        header.classList.add("side-menu--active");
+    }
+    isActive = !isActive;
+}
+
+showMenuBtn.addEventListener('click', toggleMenuBtn)
+
 
 
 

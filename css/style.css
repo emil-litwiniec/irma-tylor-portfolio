@@ -9,6 +9,16 @@
 html {
   font-size: 62.5%;
 }
+@media only screen and (max-width: 1700px) {
+  html {
+    font-size: 57.5%;
+  }
+}
+@media only screen and (max-width: 1320px) {
+  html {
+    font-size: 52.5%;
+  }
+}
 
 body {
   font-family: "Josefin Sans", sans-serif;
@@ -17,15 +27,40 @@ body {
 .content-wrapper {
   height: 100vh;
   width: 100%;
+  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 3.5fr;
+}
+@media only screen and (max-width: 1320px) {
+  .content-wrapper {
+    grid-template-columns: minmax(32rem, 1fr) 3.5fr;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .content-wrapper {
+    grid-template-columns: minmax(29rem, 1fr) 3.5fr;
+  }
 }
 
 .header {
   background-color: #ffffff;
   grid-column: 1/2;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.09);
+  transition: all 0.2s ease-in-out;
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    left: -101vw;
+  }
+}
+
+.side-menu--active {
+  left: 0;
 }
 
 .main {
@@ -35,6 +70,11 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: 0.8fr 4fr 1fr;
+}
+@media only screen and (max-width: 768px) {
+  .main {
+    grid-column: 1/-1;
+  }
 }
 
 .main-content-wrapper {
@@ -353,6 +393,21 @@ p {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 1700px) {
+  .side-menu {
+    margin: 12rem 4rem 10rem 2rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .side-menu {
+    margin: 12rem 2rem 10rem 1rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .side-menu {
+    margin: 12rem 8rem 10rem 8rem;
+  }
+}
 .side-menu__header {
   position: relative;
 }
@@ -376,10 +431,21 @@ p {
   min-width: 14rem;
   color: #3f3f3f;
 }
+@media only screen and (max-width: 900px) {
+  .side-menu__header--description {
+    top: 5.8rem;
+    right: 4.4rem;
+  }
+}
 .side-menu__nav {
   margin-top: 10rem;
   font-size: 1.5rem;
   position: relative;
+}
+@media only screen and (max-width: 1700px) {
+  .side-menu__nav {
+    margin-top: 3rem;
+  }
 }
 
 .nav {
@@ -441,6 +507,112 @@ p {
   top: 22rem;
   transform: rotate(270deg);
   color: #b0b0b0;
+}
+
+.side-menu-btn {
+  font: inherit;
+  visibility: hidden;
+  display: inline-block;
+  position: absolute;
+  overflow: visible;
+  margin: 0;
+  padding: 15px;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  z-index: 5;
+}
+@media only screen and (max-width: 768px) {
+  .side-menu-btn {
+    visibility: visible;
+  }
+}
+
+.side-menu-btn__box {
+  position: relative;
+  display: inline-block;
+  width: 3.7rem;
+  height: 2rem;
+  transition: all 0.4s ease-out;
+}
+
+.side-menu-btn__inner {
+  position: absolute;
+  top: 3rem;
+  display: block;
+  margin-top: -2px;
+  height: 4px;
+  width: inherit;
+  background-color: black;
+  border-radius: 4rem;
+  transition: all 0.25s ease-out;
+}
+.side-menu-btn__inner:before {
+  position: absolute;
+  content: "";
+  top: -2rem;
+  width: inherit;
+  height: inherit;
+  display: block;
+  background-color: blue;
+  border-radius: inherit;
+  transition: all 0.25s ease-out;
+}
+.side-menu-btn__inner:after {
+  position: absolute;
+  content: "";
+  top: -1rem;
+  right: 0;
+  width: inherit;
+  height: inherit;
+  display: block;
+  background-color: green;
+  border-radius: inherit;
+  transition: all 0.25s ease-out;
+}
+
+.side-menu-btn--active .side-menu-btn__inner {
+  position: absolute;
+  top: 2rem;
+  display: block;
+  margin-top: -2px;
+  height: 4px;
+  width: inherit;
+  background-color: black;
+  border-radius: 4rem;
+  transform: rotateZ(45deg);
+  transition: all 0.25s ease-out;
+}
+.side-menu-btn--active .side-menu-btn__inner:before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  width: inherit;
+  height: inherit;
+  display: block;
+  background-color: blue;
+  border-radius: inherit;
+  transform: rotateZ(90deg);
+  transition: all 0.25s ease-out;
+}
+.side-menu-btn--active .side-menu-btn__inner:after {
+  position: absolute;
+  content: "";
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  display: block;
+  background-color: green;
+  border-radius: inherit;
+  transform: rotateZ(-45deg);
+  transition: all 0.25s ease-out;
 }
 
 /*# sourceMappingURL=style.css.map */

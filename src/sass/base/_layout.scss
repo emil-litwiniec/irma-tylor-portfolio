@@ -1,0 +1,115 @@
+.content-wrapper {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+
+    @media only screen and (max-width: $s-desktop) {
+        grid-template-columns: minmax(32rem, 1fr) 3.5fr;
+    }
+    @media only screen and (max-width: $xs-desktop) {
+        grid-template-columns: minmax(29rem, 1fr) 3.5fr;
+    }
+}
+
+.header {
+    background-color: $off-white;
+    grid-column: 1 / 2;
+    box-shadow: $shadow-1;
+    transition: all .2s ease-in-out;
+
+    @media only screen and (max-width: $tablet) {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
+        left: -101vw;
+    }
+}
+
+.side-menu--active {
+    left: 0;
+}
+
+
+
+.main {
+    background-color: $gray-background;
+    grid-column: 2/-1;
+    height: 100%;
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: .8fr 4fr 1fr;
+    // overflow-y: scroll;
+
+    @media only screen and (max-width: $tablet) {
+        grid-column: 1 / -1;
+    }
+
+
+}
+
+
+
+.main-content-wrapper {
+    grid-column: 2 / 3;
+    height: 100vh;
+
+
+}
+
+.simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+    /* When hovered, remove all transitions from drag handle */
+    opacity: 0.2 !important;
+    transition: opacity 0s linear;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+
+    min-width: 5px !important;
+    width: 5px !important;
+
+}
+
+.simplebar-scrollbar {
+    position: absolute;
+    right: 2px;
+    width: 3px !important;
+    min-height: 10px;
+}
+
+/// PROJECT PAGE
+
+.project-content {
+    animation: .4s ease-out 0s 1 fadeIn;
+    height: 200vh;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 8rem;
+}
+
+// ABOUT PAGE
+
+.about-content {
+    animation: .4s ease-out 0s 1 fadeIn;
+    height: 100vh;
+    width: 100%;
+    padding: 10rem 0;
+
+    font-size: 1.5rem;
+    color: $gray-m;
+
+    display: grid;
+
+    grid-template: "a b b"22rem
+                   "c d e"40rem / 1.2fr 1fr 1fr;
+    
+    padding-top: 17rem;
+}
