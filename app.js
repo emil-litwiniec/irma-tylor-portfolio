@@ -113,21 +113,53 @@ simplebarContentWrapper.addEventListener('scroll', showElement);
 const showMenuBtn = document.querySelector('.side-menu-btn');
 const header = document.querySelector('.header');
 
-const toggleMenuBtn = (e) => {
-    let isActive = showMenuBtn.classList[1] ? true : false;
-    console.log(isActive);
+// const toggleMenuBtn = (e) => {
+//     let isActive = showMenuBtn.classList[1] ? true : false;
+//     console.log(isActive);
 
-    if(isActive) {
-        showMenuBtn.classList.remove("side-menu-btn--active");
-        header.classList.remove("side-menu--active");
-    } else if (!isActive) {
-        showMenuBtn.classList.add("side-menu-btn--active");
-        header.classList.add("side-menu--active");
+//     if(isActive) {
+//         showMenuBtn.classList.remove("side-menu-btn--active");
+//         header.classList.remove("header--active");
+//     } else if (!isActive) {
+//         showMenuBtn.classList.add("side-menu-btn--active");
+//         header.classList.add("header--active");
+//     }
+//     isActive = !isActive;
+// }
+
+
+const changeWithBtn = (btn, target) => {
+    
+    const toggleBtn = (btn, target) => {
+        const selectBtn = document.querySelector(`.${btn}`).classList;
+        
+        const selectTarget = document.querySelector(`.${target}`).classList;
+        let isActive = selectBtn[1] ? true : false;
+    
+        if(isActive) {
+            selectBtn.remove(`${btn}--active`);
+            selectTarget.remove(`${target}--active`);
+        } else if (!isActive) {
+            selectBtn.add(`${btn}--active`);
+            selectTarget.add(`${target}--active`);
+        }
+        isActive = !isActive;
     }
-    isActive = !isActive;
+    
+    document.querySelector(`.${btn}`).addEventListener('click', () => toggleBtn(btn, target))
 }
 
-showMenuBtn.addEventListener('click', toggleMenuBtn)
+
+// TOGGLE DESCRIPTIONS --ABOUT PAGE
+
+const revealBtn1 = document.querySelector('.exhibitions__reveal-btn');
+
+const frame1 = document.querySelector('.exhibitions__frame');
+
+changeWithBtn('side-menu-btn', 'header');
+changeWithBtn('exhibitions__reveal-btn', 'exhibitions');
+
+
 
 
 

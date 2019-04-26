@@ -59,7 +59,7 @@ body {
   }
 }
 
-.side-menu--active {
+.header--active {
   left: 0;
 }
 
@@ -119,6 +119,12 @@ body {
   grid-template: "a b b" 22rem "c d e" 40rem/1.2fr 1fr 1fr;
   padding-top: 17rem;
 }
+@media only screen and (max-width: 768px) {
+  .about-content {
+    grid-template: "b" min-content "e" min-content "c" min-content "d" min-content "a" min-content/1fr;
+    padding-top: 10rem;
+  }
+}
 
 @keyframes fadeIn {
   0% {
@@ -128,6 +134,60 @@ body {
     opacity: 1;
   }
 }
+@keyframes reveal {
+  0% {
+    width: 60%;
+    height: 0rem;
+  }
+  40% {
+    width: 100%;
+  }
+  80% {
+    height: 1rem;
+  }
+}
+.exhibitions__reveal-btn {
+  position: absolute;
+  right: -4rem;
+  top: 1rem;
+  text-decoration: none;
+  background: transparent;
+  border-style: none;
+  height: 4rem;
+  width: 4rem;
+}
+.exhibitions__reveal-btn--box {
+  display: block;
+  cursor: pointer;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exhibitions__reveal-btn--inner {
+  display: block;
+  position: relative;
+  width: 2rem;
+  height: 2px;
+  background-color: #b0b0b0;
+}
+.exhibitions__reveal-btn--inner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  background-color: inherit;
+  height: inherit;
+  transform: rotateZ(90deg);
+  transition: all 0.1s ease-in-out;
+}
+.exhibitions__reveal-btn--active .exhibitions__reveal-btn--inner:before {
+  transform: rotateZ(0);
+  opacity: 0;
+}
+
 .info {
   grid-area: b;
 }
@@ -148,6 +208,12 @@ p {
   border-top: solid 1px #b0b0b0;
   border-bottom: solid 1px #b0b0b0;
   border-left: solid 1px #b0b0b0;
+}
+@media only screen and (max-width: 768px) {
+  .frame {
+    border-bottom: none;
+    border-right: solid 1px #b0b0b0;
+  }
 }
 
 .contact {
@@ -175,6 +241,29 @@ p {
   width: 1rem;
   margin-left: 3rem;
 }
+@media only screen and (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    height: min-content;
+    margin-bottom: 2rem;
+  }
+  .contact__description {
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+  }
+  .contact__description:before {
+    position: relative;
+    display: block;
+    transform: rotate(0);
+    margin-bottom: 1rem;
+  }
+  .contact__frame {
+    height: 0rem;
+    width: 60%;
+    margin-left: 0rem;
+  }
+}
 .contact__text {
   margin-left: auto;
   margin-right: 7rem;
@@ -182,6 +271,7 @@ p {
 
 .exhibitions {
   grid-area: c;
+  position: relative;
   display: flex;
   height: 40rem;
   align-items: center;
@@ -204,11 +294,70 @@ p {
   width: 1rem;
   margin-left: 3rem;
 }
+@media only screen and (max-width: 768px) {
+  .exhibitions {
+    flex-direction: column;
+    height: min-content;
+    margin-bottom: 2rem;
+  }
+  .exhibitions__description {
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+  }
+  .exhibitions__description:before {
+    position: relative;
+    display: block;
+    transform: rotate(0);
+    margin-bottom: 1rem;
+  }
+  .exhibitions__frame {
+    height: 0rem;
+    width: 60%;
+    margin-left: 0rem;
+  }
+}
 .exhibitions__text {
   margin-left: auto;
   margin-right: 7rem;
 }
+@media only screen and (max-width: 768px) {
+  .exhibitions__text {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .exhibitions--active .exhibitions__frame {
+    height: 40rem;
+    width: 100%;
+    border-bottom: solid 1px #b0b0b0;
+    animation: 0.4s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 reveal;
+  }
+  .exhibitions--active .exhibitions__text {
+    animation: 1s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 revealText;
+    position: absolute;
+    visibility: visible;
+    bottom: 11%;
+    right: 4%;
+    opacity: 1;
+  }
+}
 
+@keyframes revealText {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    display: block;
+  }
+  100% {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+  }
+}
 .education {
   grid-area: d;
   display: flex;
@@ -234,6 +383,29 @@ p {
   width: 1rem;
   margin-left: 3rem;
 }
+@media only screen and (max-width: 768px) {
+  .education {
+    flex-direction: column;
+    height: min-content;
+    margin-bottom: 2rem;
+  }
+  .education__description {
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+  }
+  .education__description:before {
+    position: relative;
+    display: block;
+    transform: rotate(0);
+    margin-bottom: 1rem;
+  }
+  .education__frame {
+    height: 0rem;
+    width: 60%;
+    margin-left: 0rem;
+  }
+}
 .portrait {
   grid-area: e;
 }
@@ -241,6 +413,11 @@ p {
   height: auto;
   width: 100%;
   object-fit: cover;
+}
+@media only screen and (max-width: 768px) {
+  .portrait {
+    margin: 4rem 8rem;
+  }
 }
 
 .projects {
@@ -548,7 +725,7 @@ p {
   margin-top: -2px;
   height: 4px;
   width: inherit;
-  background-color: black;
+  background-color: #c4c4c4;
   border-radius: 4rem;
   transition: all 0.25s ease-out;
 }
@@ -559,7 +736,7 @@ p {
   width: inherit;
   height: inherit;
   display: block;
-  background-color: blue;
+  background-color: inherit;
   border-radius: inherit;
   transition: all 0.25s ease-out;
 }
@@ -571,19 +748,18 @@ p {
   width: inherit;
   height: inherit;
   display: block;
-  background-color: green;
+  background-color: inherit;
   border-radius: inherit;
   transition: all 0.25s ease-out;
 }
 
 .side-menu-btn--active .side-menu-btn__inner {
-  position: absolute;
   top: 2rem;
   display: block;
   margin-top: -2px;
   height: 4px;
   width: inherit;
-  background-color: black;
+  background-color: #3f3f3f;
   border-radius: 4rem;
   transform: rotateZ(45deg);
   transition: all 0.25s ease-out;
@@ -595,7 +771,7 @@ p {
   width: inherit;
   height: inherit;
   display: block;
-  background-color: blue;
+  background-color: inherit;
   border-radius: inherit;
   transform: rotateZ(90deg);
   transition: all 0.25s ease-out;
@@ -609,7 +785,7 @@ p {
   width: inherit;
   height: inherit;
   display: block;
-  background-color: green;
+  background-color: inherit;
   border-radius: inherit;
   transform: rotateZ(-45deg);
   transition: all 0.25s ease-out;

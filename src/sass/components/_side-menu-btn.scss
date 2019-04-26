@@ -30,6 +30,8 @@
     width: 3.7rem;
     height: 2rem;
     transition: all .4s ease-out;
+
+  
 }
 
 
@@ -44,9 +46,11 @@
     margin-top: -2px;
     height: 4px;
     width: inherit;
-    background-color: black;
+    background-color: $gray-l;
     border-radius: 4rem;
     transition: all .25s ease-out;
+
+   
 
     &:before {
         position: absolute;
@@ -55,9 +59,11 @@
         width: inherit;
         height: inherit;
         display: block;
-        background-color: blue;
+        background-color:inherit;
         border-radius: inherit;
         transition: all .25s ease-out;
+
+        
 
     }
 
@@ -69,7 +75,7 @@
         width: inherit;
         height: inherit;
         display: block;
-        background-color: green;
+        background-color: inherit;
         border-radius: inherit;
         transition: all .25s ease-out;
 
@@ -80,13 +86,13 @@
 
 
     .side-menu-btn__inner {
-        position: absolute;
+       
         top: 2rem;
         display: block;
         margin-top: -2px;
         height: 4px;
         width: inherit;
-        background-color: black;
+        background-color: $gray-d;
         border-radius: 4rem;
         transform: rotateZ(45deg);
         transition: all .25s ease-out;
@@ -98,7 +104,7 @@
             width: inherit;
             height: inherit;
             display: block;
-            background-color: blue;
+            background-color: inherit;
             border-radius: inherit;
             transform: rotateZ(90deg);
             transition: all .25s ease-out;
@@ -114,7 +120,7 @@
             width: inherit;
             height: inherit;
             display: block;
-            background-color: green;
+            background-color: inherit;
             border-radius: inherit;
             transform: rotateZ(-45deg);
             transition: all .25s ease-out;
