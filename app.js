@@ -158,6 +158,8 @@ const frame1 = document.querySelector('.exhibitions__frame');
 
 changeWithBtn('side-menu-btn', 'header');
 changeWithBtn('exhibitions__reveal-btn', 'exhibitions');
+changeWithBtn('education__reveal-btn', 'education');
+changeWithBtn('contact__reveal-btn', 'contact');
 
 
 
