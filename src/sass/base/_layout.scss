@@ -50,14 +50,11 @@
 
     @media only screen and (max-width: $tablet) {
         grid-column: 1 / -1;
-    }
-    @media only screen and (max-width: 500px) {
         grid-template-columns: 1fr;
         grid-auto-columns: 0;
         grid-template-rows: max-content 1fr;
     }
     
-
 
 }
 
@@ -67,10 +64,13 @@
     grid-column: 2 / 3;
     height: 100vh;
 
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: $tablet) {
         grid-column: auto;
         padding: 0 4rem;
         grid-template-rows: 10rem 1fr;
+    }
+    @media only screen and (max-width: 480px) {
+        padding: 0;
     }
 
 
@@ -105,6 +105,10 @@
     display: flex;
     flex-direction: column;
     margin: 0 8rem;
+
+    @media only screen and (max-width: $tablet) {
+        margin:0;
+    }
 }
 
 // ABOUT PAGE
@@ -129,11 +133,13 @@
         grid-template: 'b'min-content 'e'min-content 'c'min-content 'd'min-content 'a'min-content / 1fr;
 
         padding-top: 10rem;
+        height: auto;
         
     }
 }
 
 .utils {
+    background-color: transparent;
     
     @media only screen and(max-width: $tablet) {
         background-color: $off-white;
@@ -141,7 +147,25 @@
         height: 6rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+
+
         
+    }
+
+    &__header a {
+
+        display: none;
+
+        @media only screen and(max-width: $tablet) {
+                    display: block;
+                    font-size: 3rem;
+                    text-decoration: none;
+                    text-align: right;
+                    font-weight: 400;
+                    color: $off-black;
+
+        }
+
     }
 }

@@ -14,6 +14,9 @@
     @media only screen and (max-width: $tablet) {
         margin: 12rem 8rem 10rem 8rem;
     }
+    @media only screen and (max-width: $mobile) {
+        margin: 12rem 4rem 10rem 1rem;
+    }
     
 
     &__header {
@@ -78,6 +81,11 @@
         margin-bottom: 4rem !important;
         margin-top: 4rem;
         margin-left: 10rem;
+
+
+        @media only screen and (max-width: $mobile) {
+            margin-left: 6rem;
+        }
     }
 }
 
@@ -145,6 +153,13 @@
         transform: rotate(270deg);
         color: $gray-m;
 
+        @media only screen and (max-width: $mobile) {
+            top: 20rem;
+        }
+    }
 
+    @media only screen and (max-width: $mobile) {
+        height: 32rem;
+        top: 4.7rem;
     }
 }

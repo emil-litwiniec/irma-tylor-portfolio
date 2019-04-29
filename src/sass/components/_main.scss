@@ -4,7 +4,24 @@
     grid-gap: 3rem;
     margin: 10rem 0;
     animation: .3s cubic-bezier(.43,.12,.81,.2) 0s 1 fadeIn;
+
+    @media only screen and (max-width: $tablet) {
+        grid-template: auto;
+        grid-template-columns: 70%;
+        grid-template-rows: 60%;
+        grid-auto-columns: 0;
+        grid-gap: 0px;
+        row-gap: 0px;
+        justify-content: center;
+        row-gap: 2rem;
+    }
+    @media only screen and (max-width: 480px) {
+        margin: 4rem 0;
+        grid-template-columns: 100%;
+    }
 }
+
+
 
 .preview {
     height: 100%;
@@ -14,6 +31,22 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.09);
     position: relative;
     overflow: hidden;
+
+    // &:after{
+    //     content: 'Opis 1. 112124 22 opel';
+    //     height: 2rem;
+    //     width: 100%;
+    //     font-family: $font-primary;
+    //     font-weight: 300;
+    //     position: absolute;
+    //     z-index: 5;
+    //     bottom: -3rem;
+    //     // right: 27rem;
+    //     font-size: 1.6rem;
+    //     // text
+    //     // background-color: rgba(0, 0, 0, .4);
+    //     color: $gray-d;
+    // }
 
     img {
         object-fit: cover;
@@ -51,6 +84,31 @@
     height: 117%;
     width: 100%;
     background: linear-gradient(to right, rgba(44, 63, 104, 0.7) 0%, rgba(125, 185, 232, 0) 100%);
+
+    @media only screen and (max-width: $tablet) {
+        display: none;
+    }
+}
+
+.preview-label {
+
+    display: none;
+@media only screen and (max-width: $tablet) {
+
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: $font-primary;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(44, 63, 104, 0.4) 0%, rgba(125, 185, 232, 0) 100%);
+}
+
 }
 
 .scroll-to-top {
@@ -89,13 +147,15 @@
         height: 3rem;
     }
 
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: $tablet) {
         position: relative;
         bottom: 0;
         top: 4px;
         left: 0;
-        margin: 0 1rem;
-        
+        // margin: 0 1rem;
+        margin-left: 2.8rem;
+
+margin-right: 1.4rem;
     }
 }
 
