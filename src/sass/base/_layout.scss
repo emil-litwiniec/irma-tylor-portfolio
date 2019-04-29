@@ -51,6 +51,12 @@
     @media only screen and (max-width: $tablet) {
         grid-column: 1 / -1;
     }
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+        grid-auto-columns: 0;
+        grid-template-rows: max-content 1fr;
+    }
+    
 
 
 }
@@ -60,6 +66,12 @@
 .main-content-wrapper {
     grid-column: 2 / 3;
     height: 100vh;
+
+    @media only screen and (max-width: 500px) {
+        grid-column: auto;
+        padding: 0 4rem;
+        grid-template-rows: 10rem 1fr;
+    }
 
 
 }
@@ -117,6 +129,19 @@
         grid-template: 'b'min-content 'e'min-content 'c'min-content 'd'min-content 'a'min-content / 1fr;
 
         padding-top: 10rem;
+        
+    }
+}
+
+.utils {
+    
+    @media only screen and(max-width: $tablet) {
+        background-color: $off-white;
+        width: 100%;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         
     }
 }

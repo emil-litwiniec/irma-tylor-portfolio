@@ -76,10 +76,24 @@ body {
     grid-column: 1/-1;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-auto-columns: 0;
+    grid-template-rows: max-content 1fr;
+  }
+}
 
 .main-content-wrapper {
   grid-column: 2/3;
   height: 100vh;
+}
+@media only screen and (max-width: 500px) {
+  .main-content-wrapper {
+    grid-column: auto;
+    padding: 0 4rem;
+    grid-template-rows: 10rem 1fr;
+  }
 }
 
 .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
@@ -126,6 +140,17 @@ body {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .utils {
+    background-color: #ffffff;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -160,6 +185,7 @@ body {
   }
 }
 .exhibitions__reveal-btn {
+  display: none;
   position: absolute;
   right: 0rem;
   top: -8px;
@@ -203,8 +229,14 @@ body {
   transform: rotateZ(0);
   opacity: 0;
 }
+@media only screen and (max-width: 768px) {
+  .exhibitions__reveal-btn {
+    display: initial;
+  }
+}
 
 .education__reveal-btn {
+  display: none;
   position: absolute;
   right: 0rem;
   top: -8px;
@@ -244,12 +276,18 @@ body {
   transform: rotateZ(90deg);
   transition: all 0.1s ease-in-out;
 }
-.education__reveal-btn--active .exhibitions__reveal-btn--inner:before {
+.education__reveal-btn--active .education__reveal-btn--inner:before {
   transform: rotateZ(0);
   opacity: 0;
 }
+@media only screen and (max-width: 768px) {
+  .education__reveal-btn {
+    display: initial;
+  }
+}
 
 .contact__reveal-btn {
+  display: none;
   position: absolute;
   right: 0rem;
   top: -8px;
@@ -289,9 +327,14 @@ body {
   transform: rotateZ(90deg);
   transition: all 0.1s ease-in-out;
 }
-.contact__reveal-btn--active .exhibitions__reveal-btn--inner:before {
+.contact__reveal-btn--active .contact__reveal-btn--inner:before {
   transform: rotateZ(0);
   opacity: 0;
+}
+@media only screen and (max-width: 768px) {
+  .contact__reveal-btn {
+    display: initial;
+  }
 }
 
 .info {
@@ -636,6 +679,7 @@ p {
   transition: all 0.4s ease-in-out;
   border-style: none;
   cursor: pointer;
+  height: 3rem;
   visibility: hidden;
 }
 .scroll-to-top:hover {
@@ -655,6 +699,15 @@ p {
 }
 .scroll-to-top__img {
   height: 3rem;
+}
+@media only screen and (max-width: 500px) {
+  .scroll-to-top {
+    position: relative;
+    bottom: 0;
+    top: 4px;
+    left: 0;
+    margin: 0 1rem;
+  }
 }
 
 .project-content {
@@ -857,11 +910,17 @@ p {
   color: inherit;
   border: 0;
   background-color: transparent;
+  top: -8px;
   z-index: 5;
 }
 @media only screen and (max-width: 768px) {
   .side-menu-btn {
     visibility: visible;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .side-menu-btn {
+    position: relative;
   }
 }
 

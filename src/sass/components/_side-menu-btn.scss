@@ -15,13 +15,18 @@
     color: inherit;
     border: 0;
     background-color: transparent;
+    top: -8px;
 
     z-index: 5;
 
     @media only screen and (max-width: $tablet) {
                 visibility: visible;
+
+    }
+    @media only screen and (max-width: 500px) {
+                position: relative;
               
-            }
+    }
 }
 
 .side-menu-btn__box {
