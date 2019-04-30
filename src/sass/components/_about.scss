@@ -12,12 +12,10 @@
 
 @keyframes reveal {
 0% {
-    width: 60%;
+    
     height: 0rem;
 }
-40% {
-    width: 100%;
-}
+
 80%{
     height: 1rem;
 }
@@ -26,9 +24,9 @@
 }
 }
 
+
 @keyframes revealText{
     0%{
-        // display: none;
         opacity: 0;
     }
 
@@ -39,7 +37,6 @@
     100%{
         position: absolute;
         visibility: visible;
-        // display: inline-block;
         opacity: 1
     }
 }
@@ -105,8 +102,6 @@
                 margin-bottom: 1rem;
                 align-self: flex-start;
                 left: 0;
-                // right: auto;
-                // text-align: center;
             }
         }
 
@@ -114,15 +109,7 @@
             height: 0rem;
             width: 100%;
             margin-left: 0rem;
-            
-            // &--active {
-            //     height: 20rem;
-            //     width: 100%;
-            //     border-bottom: solid 1px $gray-m;
-            //     animation: .4s cubic-bezier(.43,.12,.81,.2) 0s 1 reveal;
-            // // animation: .5s cubic-bezier(.43,.12,.81,.2) 0s 1 reveal;
-
-            // }
+         
         }
     }
 
@@ -266,8 +253,8 @@ p {
     @include about-titles(10rem, "contact", -1.1rem);
     
     @media only screen and (max-width: $tablet) {
-        &--active {
 
+        &--active {
             @include sectionActiveTablet('contact', 10rem, 37%);
     
         }

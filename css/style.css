@@ -56,6 +56,7 @@ body {
     width: 100vw;
     z-index: 1;
     left: -101vw;
+    overflow: scroll;
   }
 }
 
@@ -98,7 +99,6 @@ body {
 }
 
 .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
-  /* When hovered, remove all transitions from drag handle */
   opacity: 0.2 !important;
   transition: opacity 0s linear;
 }
@@ -125,6 +125,7 @@ body {
 @media only screen and (max-width: 768px) {
   .project-content {
     margin: 0;
+    height: min-content;
   }
 }
 
@@ -142,7 +143,7 @@ body {
 @media only screen and (max-width: 768px) {
   .about-content {
     grid-template: "b" min-content "e" min-content "c" min-content "d" min-content "a" min-content/1fr;
-    padding-top: 10rem;
+    padding-top: 3rem;
     height: auto;
   }
 }
@@ -184,11 +185,7 @@ body {
 }
 @keyframes reveal {
   0% {
-    width: 60%;
     height: 0rem;
-  }
-  40% {
-    width: 100%;
   }
   80% {
     height: 1rem;
@@ -651,9 +648,10 @@ p {
 }
 @media only screen and (max-width: 768px) {
   .projects {
-    grid-template: auto;
+    grid-template: none;
     grid-template-columns: 70%;
-    grid-template-rows: 60%;
+    grid-template-rows: 47rem;
+    grid-auto-rows: 47rem;
     grid-auto-columns: 0;
     grid-gap: 0px;
     row-gap: 0px;
@@ -692,6 +690,16 @@ p {
   grid-column: 2/3;
   grid-row: 1/2;
   position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .preview--1 {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+  .preview--2 {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
 }
 
 .over-picture {
@@ -791,7 +799,7 @@ p {
 }
 @media only screen and (max-width: 768px) {
   .project__header-title {
-    margin: 12rem 6rem 0 6rem;
+    margin: 4rem 6rem 0 6rem;
     font-size: 4rem;
   }
 }
@@ -900,7 +908,7 @@ p {
 }
 @media only screen and (max-width: 480px) {
   .side-menu {
-    margin: 12rem 4rem 10rem 1rem;
+    margin: 1rem 4rem 10rem 1rem;
   }
 }
 .side-menu__header {
@@ -915,6 +923,11 @@ p {
 .side-menu__header--title a {
   text-decoration: none;
   color: #565656;
+}
+@media only screen and (max-width: 768px) {
+  .side-menu__header--title {
+    font-size: 4rem;
+  }
 }
 .side-menu__header--description {
   font-size: 1.5rem;
@@ -932,6 +945,12 @@ p {
     right: 4.4rem;
   }
 }
+@media only screen and (max-width: 768px) {
+  .side-menu__header--description {
+    font-size: 1.4rem;
+    top: 3.8rem;
+  }
+}
 .side-menu__nav {
   margin-top: 10rem;
   font-size: 1.5rem;
@@ -942,6 +961,11 @@ p {
     margin-top: 3rem;
   }
 }
+@media only screen and (max-width: 768px) {
+  .side-menu__nav {
+    margin-top: 0rem;
+  }
+}
 
 .nav {
   list-style: none;
@@ -949,8 +973,19 @@ p {
   color: #3f3f3f;
   font-weight: 300;
 }
+@media only screen and (max-width: 768px) {
+  .nav {
+    margin-top: 6rem;
+    font-size: 2.3rem;
+  }
+}
 .nav li {
   margin-bottom: 1rem;
+}
+@media only screen and (max-width: 768px) {
+  .nav li {
+    margin: 1.5rem 0;
+  }
 }
 .nav--left {
   text-align: left;
@@ -958,9 +993,23 @@ p {
   margin-top: 4rem;
   margin-left: 10rem;
 }
+@media only screen and (max-width: 768px) {
+  .nav--left {
+    display: none;
+  }
+}
 @media only screen and (max-width: 480px) {
   .nav--left {
     margin-left: 6rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .nav--about {
+    display: block;
+    margin-left: 5rem !important;
+    margin-top: 3.5rem !important;
+    padding-top: 3.5rem;
+    border-top: 1px dotted #c4c4c4;
   }
 }
 
@@ -971,6 +1020,11 @@ p {
 }
 .nav-button:hover {
   color: #0c0c0c;
+}
+@media only screen and (max-width: 768px) {
+  .nav-button:hover {
+    color: #3f3f3f;
+  }
 }
 .nav-button:before {
   content: "";
@@ -990,6 +1044,11 @@ p {
   opacity: 1;
   left: 0;
 }
+@media only screen and (max-width: 768px) {
+  .nav-button:hover:before {
+    opacity: 0;
+  }
+}
 
 .nav-frame {
   position: absolute;
@@ -1008,15 +1067,14 @@ p {
   transform: rotate(270deg);
   color: #b0b0b0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .nav-frame__text {
-    top: 20rem;
+    display: none;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .nav-frame {
-    height: 32rem;
-    top: 4.7rem;
+    display: none;
   }
 }
 

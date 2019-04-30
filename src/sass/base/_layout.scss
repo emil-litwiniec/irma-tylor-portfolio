@@ -28,6 +28,7 @@
         width: 100vw;
         z-index: 1;
         left: -101vw;
+        overflow: scroll;
     }
 }
 
@@ -46,7 +47,6 @@
     display: grid;
 
     grid-template-columns: .8fr 4fr 1fr;
-    // overflow-y: scroll;
 
     @media only screen and (max-width: $tablet) {
         grid-column: 1 / -1;
@@ -77,7 +77,6 @@
 }
 
 .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
-    /* When hovered, remove all transitions from drag handle */
     opacity: 0.2 !important;
     transition: opacity 0s linear;
 }
@@ -101,13 +100,13 @@
 .project-content {
     animation: .4s ease-out 0s 1 fadeIn;
     height: 200vh;
-    // width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0 8rem;
 
     @media only screen and (max-width: $tablet) {
         margin:0;
+        height: min-content;
     }
 }
 
@@ -132,7 +131,7 @@
     @media only screen and(max-width: $tablet){
         grid-template: 'b'min-content 'e'min-content 'c'min-content 'd'min-content 'a'min-content / 1fr;
 
-        padding-top: 10rem;
+        padding-top: 3rem;
         height: auto;
         
     }
