@@ -69,7 +69,7 @@
         padding: 0 4rem;
         grid-template-rows: 10rem 1fr;
     }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: $mobile) {
         padding: 0;
     }
 
@@ -102,7 +102,7 @@
     height: 200vh;
     display: flex;
     flex-direction: column;
-    margin: 0 8rem;
+    margin: 0 .7rem;
 
     @media only screen and (max-width: $tablet) {
         margin:0;
@@ -127,8 +127,9 @@
                    "c d e"40rem / 1.2fr 1fr 1fr;
     
     padding-top: 17rem;
+    row-gap: 2rem;
 
-    @media only screen and(max-width: $tablet){
+    @media only screen and (max-width: $sm-desktop){
         grid-template: 'b'min-content 'e'min-content 'c'min-content 'd'min-content 'a'min-content / 1fr;
 
         padding-top: 3rem;

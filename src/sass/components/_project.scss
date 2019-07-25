@@ -26,8 +26,13 @@
         text-align: justify;
         margin: 4rem 8rem 8rem 8rem;
 
+        @media only screen and (max-width: $sm-desktop){
+            font-size: 1.4rem;
+            margin: 4rem 2rem 8rem 2rem;
+        }
 
         @media only screen and (max-width: $tablet) {
+            font-size: 1.6rem;
              margin: 4rem 6rem 8rem 6rem;
         }
     }
@@ -38,13 +43,29 @@
     font-family: $font-para;
     text-align: justify;
     margin: 6rem 6rem;
+
+    @media only screen and (max-width: $sm-desktop){
+        font-size: 1.4rem;
+        margin: 4rem 2rem 8rem 2rem;
+    }
+
+    @media only screen and (max-width: $tablet) {
+        font-size: 1.6rem;
+         margin: 6rem 4rem;
+    }
+
 }
 
 .project__image-group {
     &--1 {
         display: grid;
-        grid-template: "img1 img2"70rem "img3 img3"70rem / 1fr 1fr;
+        grid-template: "img1 img2"auto "img3 img3"70rem / 1fr 1fr;
         grid-gap: 2rem;
+
+        @media only screen and (max-width: $sm-desktop - 150px) {
+            grid-template: "img1 img1" auto "img2 img2"auto "img3 img3" 70rem/1fr 1fr;
+        }
+        
 
         @media only screen and (max-width: $tablet) {
             grid-template: auto;

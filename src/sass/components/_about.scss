@@ -51,8 +51,8 @@
 
     &__text {
         margin-left: auto;
-        margin-right: 7rem;
-        @media only screen and (max-width: $tablet){
+        margin-right: 4rem;
+        @media only screen and (max-width: $sm-desktop){
             position: absolute;
             visibility: hidden;
             opacity: 0;
@@ -81,7 +81,7 @@
         margin-left: 3rem;
     }
 
-    @media only screen and (max-width: $tablet){
+    @media only screen and (max-width: $sm-desktop){
         flex-direction: column;
         
 
@@ -175,7 +175,7 @@
             }
         }
 
-        @media only screen and (max-width: $tablet){
+        @media only screen and (max-width: $sm-desktop){
             display: initial;
         }
     }
@@ -210,8 +210,6 @@
 
 
 
-
-
 .info {
     grid-area: b;
     
@@ -219,6 +217,13 @@
         text-align: justify;
         font-size: 1.33rem;
         margin: 0 4rem;
+
+        @media only screen and (max-width: $sm-desktop) {
+            margin-top: 9rem;
+        }
+        @media only screen and (max-width: $tablet){
+            margin-top: 0;
+        }
     }
 }
 
@@ -238,7 +243,7 @@ p {
         border-bottom: solid 1px $gray-m;
         border-left: solid 1px $gray-m;
 
-        @media only screen and (max-width: $tablet){
+        @media only screen and (max-width: $sm-desktop){
             border-bottom: none;
             border-right: solid 1px $gray-m;
         }
@@ -252,7 +257,7 @@ p {
 
     @include about-titles(10rem, "contact", -1.1rem);
     
-    @media only screen and (max-width: $tablet) {
+    @media only screen and (max-width: $sm-desktop) {
 
         &--active {
             @include sectionActiveTablet('contact', 10rem, 37%);
@@ -269,7 +274,7 @@ p {
     
     @include about-titles(40rem, "exhibitions", -2.1rem);
 
-    @media only screen and (max-width: $tablet) {
+    @media only screen and (max-width: $sm-desktop) {
         &--active {
             @include sectionActiveTablet('exhibitions', 40rem, 11%);
         
@@ -286,7 +291,7 @@ p {
     
     @include about-titles(30rem, "education", -2rem);
 
-    @media only screen and (max-width: $tablet) {
+    @media only screen and (max-width: $sm-desktop) {
         &--active {
             @include sectionActiveTablet('education', 30rem, 18%);
     
@@ -306,7 +311,10 @@ p {
         }
     }
 
-    @media only screen and (max-width: $tablet){
-        margin: 4rem 8rem;
+    @media only screen and (max-width: $sm-desktop){
+        margin: 3rem 14rem;
+    }
+    @media only screen and (max-width: 1050px){
+        margin: 3rem 9rem;
     }
 }

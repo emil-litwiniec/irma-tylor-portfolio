@@ -125,9 +125,6 @@
     }
     
 
-    // @media only screen and (max-width: $mobile) {
-    //     margin-left: 2rem;
-    // }
 
 }
 
@@ -143,7 +140,8 @@
         }
     }
 
-    // button underline animation // vvvvv
+    
+    ///--------- button underline animation ----------/// 
 
     &:before {
         content: "";
@@ -200,16 +198,9 @@
             display: none;
         }
 
-        // @media only screen and (max-width: $mobile) {
-        //     top: 20rem;
-        // }
     }
 
     @media only screen and (max-width: $tablet) {
         display: none;
     }
-    // @media only screen and (max-width: $mobile) {
-    //     height: 32rem;
-    //     top: 4.7rem;
-    // }
 }
