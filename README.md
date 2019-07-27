@@ -42,7 +42,7 @@ npm start
 
 </br>
 <sup>Landing page with hovered button</sup> </br>
-<img src="readme_screenshots/screenshot_7_.png" alt="Screenshot from portfolio website for Irma Tylor" width="700"/>
+<img src="readme_screenshots/screenshot_7.png" alt="Screenshot from portfolio website for Irma Tylor" width="700"/>
 
 </br>
 <sup>About page</sup> </br>
