@@ -1,7 +1,7 @@
 .projects {
     display: grid;
     grid-template: repeat(3, auto)/repeat(2, auto);
-    grid-gap: 3rem;
+    grid-gap: 1rem;
     margin: 2rem 1rem;
     animation: .3s cubic-bezier(.43,.12,.81,.2) 0s 1 fadeIn;
 

@@ -272,11 +272,11 @@ p {
     grid-area: c;
     position: relative;
     
-    @include about-titles(40rem, "exhibitions", -2.1rem);
+    @include about-titles(33rem, "exhibitions", -2.1rem);
 
     @media only screen and (max-width: $sm-desktop) {
         &--active {
-            @include sectionActiveTablet('exhibitions', 40rem, 11%);
+            @include sectionActiveTablet('exhibitions', 33rem, 11%);
         
         }
     }
