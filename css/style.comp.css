@@ -659,7 +659,7 @@ p {
   display: grid;
   grid-template: repeat(3, auto)/repeat(2, auto);
   grid-gap: 3rem;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   animation: 0.3s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 fadeIn;
 }
 @media only screen and (max-width: 768px) {
