@@ -1,120 +1,167 @@
 .projects {
-    display: grid;
-    grid-template: repeat(3, auto)/repeat(2, auto);
-    grid-gap: 1rem;
-    margin: 2rem 1rem;
-    animation: .3s cubic-bezier(.43,.12,.81,.2) 0s 1 fadeIn;
+  display: grid;
+  grid-template: repeat(2, min-content) / repeat(4, 25%);
+  width: 76.6vw;
+  grid-gap: 0.2rem;
+  margin: auto 0;
+  animation: 0.3s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 fadeIn;
 
-    @media only screen and (max-width: $tablet) {
-        grid-template: none;
-        grid-template-columns: 70%;
-        grid-template-rows: 47rem;
-        grid-auto-rows: 47rem;
-        grid-auto-columns: 0;
-        grid-gap: 0px;
-        row-gap: 0px;
-        justify-content: center;
-        row-gap: 1px;
-    }
-    @media only screen and (max-width: $mobile) {
-        margin: 0rem 0;
-        grid-template-columns: 100%;
-    }
+  @media only screen and (max-width: $s-desktop) {
+    grid-template: repeat(2, min-content) / repeat(3, 33.333%);
+    width: 76.2vw;
+}
+  @media only screen and (max-width: 1200px) {
+    width: calc(100vw - 32rem);
+  }
+  @media only screen and (max-width: 1050px) {
+    grid-template: repeat(2, min-content) / repeat(2, 50%);
+  }
+  @media only screen and (max-width: 900px) {
+    width: calc(100vw - 29rem);
+  }
 
-    @media only screen and (min-width: $l-desktop) {
-        grid-template: repeat(3, 40rem)/repeat(3, 32rem);
-    }
+  @media only screen and (max-width: $tablet) {
+    grid-template: none;
+    grid-template-columns: 70%;
+    grid-template-rows: 47rem;
+    grid-auto-rows: 47rem;
+    grid-auto-columns: 0;
+    grid-gap: 0px;
+    row-gap: 0px;
+    justify-content: center;
+    row-gap: 1px;
+    width: auto;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin: 0rem 0;
+    grid-template-columns: 100%;
+  }
 }
 
 .projects__title {
-	margin: 12rem auto 0 auto;
-	font-size: 2.5rem;
-	font-weight: 300;
-    color: #b0b0b0;
-    
-    
-    @media only screen and (max-width: $tablet) {
-        margin: 4rem auto 0 auto;
-        margin-left: 15%;
-    }
-    @media only screen and (max-width: $mobile) {
-        margin: 1rem;
-        text-align: center;
-    }
+  margin: 12rem auto 0 auto;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #b0b0b0;
+
+  @media only screen and (max-width: $tablet) {
+    margin: 4rem auto 0 auto;
+    margin-left: 15%;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin: 1rem;
+    text-align: center;
+  }
 }
 
 .preview {
-    height: 100%;
+  height: 40rem;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.09);
+  position: relative;
+  overflow: hidden;
+
+  @media only screen and (max-width: $tablet) {
+      height: auto;
+  }
+
+  img {
+    object-fit: cover;
     width: 100%;
-    background-color: green;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.09);
-    position: relative;
-    overflow: hidden;
+    height: 100%;
+  }
 
-   
+  &--1 {
+      img {
+          object-position: -70px;
+          width: 100%;
+          height: 100%;
+      }
+  }
+  &--6 {
+      img {
+          object-position: -382px;
+          width: 145%;
+          height: 145%;
+      }
+  }
 
+  &--7 {
+      img {
+          object-position: 0px;
+          width: 145%;
+          height: 145%;
+      }
+  }
+
+  &--11 {
     img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+        object-position: -22px;
+        width: 155%;
+        height: 155%;
     }
+}
 
-    &--1 {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        position: relative;
-        overflow: hidden;
-    }
+//   &--1 {
+//     grid-column: 1 / 2;
+//     grid-row: 1 / 2;
+//     position: relative;
+//     overflow: hidden;
+//   }
 
-    &--2 {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-        position: relative;
-    }
+//   &--2 {
+//     grid-column: 2 / 3;
+//     grid-row: 1 / 2;
+//     position: relative;
+//   }
 
-    @media only screen and (max-width: $tablet) {
-        &--1 {
-            grid-column: 1 / -1;
-            grid-row: 1 / 2;
-       
-        }
-    
-        &--2 {
-            grid-column: 1 / -1;
-            grid-row: 2 / 3;
-           
-        }
-    }
+//   @media only screen and (max-width: $tablet) {
+//     &--1 {
+//       grid-column: 1 / -1;
+//       grid-row: 1 / 2;
+//     }
+
+//     &--2 {
+//       grid-column: 1 / -1;
+//       grid-row: 2 / 3;
+//     }
+//   }
 }
 
 .over-picture {
-    transition: all .3s ease-in-out;
-    content: 'Super Lights: Story of Love';
-    color: $gray-background;
-    font-family: $font-titles;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 78.4613px;
-    opacity: 0;
-    top: -2.6rem;
-    left: 0;
-    display: block;
-    position: absolute;
-    height: 117%;
-    width: 100%;
-    background: linear-gradient(to right, rgba(44, 63, 104, 0.7) 0%, rgba(125, 185, 232, 0) 100%);
+  transition: all 0.3s ease-in-out;
+  color: $gray-background;
+  font-family: $font-titles;
+  font-size: 38px;
+  opacity: 0;
+  top: -2.6rem;
+  left: 0;
+  display: block;
+  padding-top: 300px;
+  padding-left: 30px;
+  position: absolute;
+  height: 117%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(44, 63, 104, 0.7) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
 
-    @media only screen and (max-width: $tablet) {
-        display: none;
-    }
+  @media only screen and (max-width: $s-desktop) {
+    font-size: 22px;
+}
+  @media only screen and (max-width: $tablet) {
+    display: none;
+  }
+
+
 }
 
 .preview-label {
-
-    display: none;
-@media only screen and (max-width: $tablet) {
-
+  display: none;
+  @media only screen and (max-width: $tablet) {
     display: block;
     position: absolute;
     color: white;
@@ -126,56 +173,54 @@
     padding: 1rem;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, rgba(44, 63, 104, 0.4) 0%, rgba(125, 185, 232, 0) 100%);
-}
-
+    background: linear-gradient(
+      to bottom,
+      rgba(44, 63, 104, 0.4) 0%,
+      rgba(125, 185, 232, 0) 100%
+    );
+  }
 }
 
 .scroll-to-top {
+  grid-column: 1 / 2;
+  position: absolute;
+  bottom: 10rem;
+  left: 40%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  border-style: none;
+  cursor: pointer;
+  height: 3rem;
+  visibility: hidden;
 
+  &:hover {
+    background: none;
+    opacity: 1 !important;
+  }
 
-    grid-column: 1 / 2;
+  &:before {
+    content: '';
+    background-color: black;
+    width: 2.8rem;
+    height: 0.4rem;
     position: absolute;
-    bottom: 10rem;
-    left: 40%;
-    opacity: 0;
-    transition: all .4s ease-in-out;
-    border-style: none;
-    cursor: pointer;
+    top: -3px;
+    left: 1px;
+    display: block;
+    border-radius: 7px;
+  }
+
+  &__img {
     height: 3rem;
-    visibility: hidden;
-    
+  }
 
-    &:hover {
-        background: none;
-        opacity: 1 !important;
-    }
+  @media only screen and (max-width: $tablet) {
+    position: relative;
+    bottom: 0;
+    top: 4px;
+    left: 0;
+    margin-left: 2.8rem;
 
-    &:before {
-        content: '';
-        background-color: black;
-        width: 2.8rem;
-        height: .4rem;
-        position: absolute;
-        top: -3px;
-        left: 1px;
-        display: block;
-        border-radius: 7px;
-    }
-
-    &__img {
-        height: 3rem;
-    }
-
-    @media only screen and (max-width: $tablet) {
-        position: relative;
-        bottom: 0;
-        top: 4px;
-        left: 0;
-        margin-left: 2.8rem;
-
-margin-right: 1.4rem;
-    }
+    margin-right: 1.4rem;
+  }
 }
-
-

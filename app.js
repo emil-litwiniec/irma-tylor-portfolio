@@ -74,38 +74,23 @@ previews.forEach(preview => preview.addEventListener('mouseleave', slideOut));
 
 // SCROLL TO TOP //
 
-const mainContentWrapper = new SimpleBar(document.querySelector('.main-content-wrapper'));
 
-const showScroll = (e) => {
-    console.log(e);
-}
-
-const simplebarContentWrapper = document.querySelector('.simplebar-content-wrapper');
+// const scrollToTopBtn = document.querySelector('.scroll-to-top');
 
 
-const scrollToTopBtn = document.querySelector('.scroll-to-top');
+// const showElement = (e) => {
+//     let scrollTop = e.target.scrollTop;
 
+//     if (scrollTop > 0) {
+//         scrollToTopBtn.style.opacity = 0.2;
+//         scrollToTopBtn.style.visibility = "visible";
+//     } else {
+//         scrollToTopBtn.style.opacity = 0;
+//         scrollToTopBtn.style.visibility = "hidden";
+//     }
+// }
 
-const scrollToTop = () => {
-    simplebarContentWrapper.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
-}
-const showElement = (e) => {
-    let scrollTop = e.target.scrollTop;
-
-    if (scrollTop > 0) {
-        scrollToTopBtn.style.opacity = 0.2;
-        scrollToTopBtn.style.visibility = "visible";
-    } else {
-        scrollToTopBtn.style.opacity = 0;
-        scrollToTopBtn.style.visibility = "hidden";
-    }
-}
-
-scrollToTopBtn.addEventListener('click', scrollToTop);
-simplebarContentWrapper.addEventListener('scroll', showElement);
+// scrollToTopBtn.addEventListener('click', scrollToTop);
 
 
 // TOGGLE SIDE MENU BTN
@@ -114,6 +99,8 @@ const showMenuBtn = document.querySelector('.side-menu-btn');
 const header = document.querySelector('.header');
 
 const changeWithBtn = (btn, target) => {
+
+    console.log({btn, target})
     
     const toggleBtn = (btn, target) => {
         const selectBtn = document.querySelector(`.${btn}`).classList;
