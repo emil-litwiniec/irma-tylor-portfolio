@@ -1,40 +1,3 @@
-// LAZY LOADING //
-
-const images = window.document.querySelectorAll('source, img');
-
-const config = {
-    rootMargin: '50px 0px',
-    threshold: 0.01
-};
-let onIntersection = (entries) => {
-    entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-            observer.unobserve(entry.target);
-            preloadImage(entry.target);
-        }
-    });
-}
-
-let observer;
-
-let preloadImage = (element) => {
-    if (element.dataset && element.dataset.src) {
-        element.src = element.dataset.src;
-    }
-    if (element.dataset && element.dataset.srcset) {
-        element.srcset = element.dataset.srcset
-    }
-}
-
-if (!('IntersectionObserver' in window)) {
-    Array.from(images).forEach(image => preloadImage(image));
-} else {
-    observer = new IntersectionObserver(onIntersection, config);
-    images.forEach(image => {
-        observer.observe(image);
-    });
-
-}
 
 // HOVER OVER PROJECTS EFFECT //
 
@@ -72,27 +35,6 @@ previews.forEach(preview => preview.addEventListener('mouseenter', slideIn));
 previews.forEach(preview => preview.addEventListener('mouseleave', slideOut));
 
 
-// SCROLL TO TOP //
-
-
-// const scrollToTopBtn = document.querySelector('.scroll-to-top');
-
-
-// const showElement = (e) => {
-//     let scrollTop = e.target.scrollTop;
-
-//     if (scrollTop > 0) {
-//         scrollToTopBtn.style.opacity = 0.2;
-//         scrollToTopBtn.style.visibility = "visible";
-//     } else {
-//         scrollToTopBtn.style.opacity = 0;
-//         scrollToTopBtn.style.visibility = "hidden";
-//     }
-// }
-
-// scrollToTopBtn.addEventListener('click', scrollToTop);
-
-
 // TOGGLE SIDE MENU BTN
 
 const showMenuBtn = document.querySelector('.side-menu-btn');
@@ -100,8 +42,7 @@ const header = document.querySelector('.header');
 
 const changeWithBtn = (btn, target) => {
 
-    console.log({btn, target})
-    
+
     const toggleBtn = (btn, target) => {
         const selectBtn = document.querySelector(`.${btn}`).classList;
         
@@ -117,7 +58,6 @@ const changeWithBtn = (btn, target) => {
         }
         isActive = !isActive;
     }
-    
     document.querySelector(`.${btn}`).addEventListener('click', () => toggleBtn(btn, target))
 }
 
@@ -128,15 +68,12 @@ const revealBtn1 = document.querySelector('.exhibitions__reveal-btn');
 
 const frame1 = document.querySelector('.exhibitions__frame');
 
+const isAboutPage = window.location.pathname === "/about.html"
+
 changeWithBtn('side-menu-btn', 'header');
-changeWithBtn('exhibitions__reveal-btn', 'exhibitions');
-changeWithBtn('education__reveal-btn', 'education');
-changeWithBtn('contact__reveal-btn', 'contact');
 
-
-
-
-
-
-
-
+if (isAboutPage) {
+    changeWithBtn('exhibitions__reveal-btn', 'exhibitions');
+    changeWithBtn('education__reveal-btn', 'education');
+    changeWithBtn('contact__reveal-btn', 'contact');
+} 

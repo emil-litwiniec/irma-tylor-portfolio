@@ -2,49 +2,49 @@
 
 @keyframes fadeIn {
     0% {
-      opacity: 0;
-    }
-    
-    100% {
-      opacity: 1;
-    }
-  }
-
-@keyframes reveal {
-0% {
-    
-    height: 0rem;
-}
-
-80%{
-    height: 1rem;
-}
-100% {
-    
-}
-}
-
-
-@keyframes revealText{
-    0%{
         opacity: 0;
     }
 
-    20%{
-        display: block;
-    }
-
-    100%{
-        position: absolute;
-        visibility: visible;
-        opacity: 1
+    100% {
+        opacity: 1;
     }
 }
 
-// mixins 
+@keyframes reveal {
+    0% {
+        height: 0rem;
+    }
 
-@mixin about-titles($description-height, $description-title, $description-left) {
-   
+    80% {
+        height: 1rem;
+    }
+    100% {
+    }
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        display: block;
+    }
+
+    100% {
+        position: absolute;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// mixins
+
+@mixin about-titles(
+    $description-height,
+    $description-title,
+    $description-left
+) {
     display: flex;
     height: $description-height;
     align-items: center;
@@ -52,7 +52,8 @@
     &__text {
         margin-left: auto;
         margin-right: 4rem;
-        @media only screen and (max-width: $sm-desktop){
+
+        @media only screen and (max-width: $sm-desktop) {
             position: absolute;
             visibility: hidden;
             opacity: 0;
@@ -61,8 +62,8 @@
 
     &__description {
         display: flex;
-        height: inherit; 
-        width: 4rem; 
+        height: inherit;
+        width: 4rem;
         align-items: center;
         position: relative;
 
@@ -81,21 +82,18 @@
         margin-left: 3rem;
     }
 
-    @media only screen and (max-width: $sm-desktop){
+    @media only screen and (max-width: $sm-desktop) {
         flex-direction: column;
-        
 
         height: min-content;
         margin-bottom: 2rem;
-        padding: 0 4rem;
+        // padding: 0 4rem;
 
         &__description {
-            
             flex-direction: column;
             justify-content: center;
             width: 100%;
             &:before {
-
                 position: relative;
                 display: block;
                 transform: rotate(0);
@@ -109,11 +107,8 @@
             height: 0rem;
             width: 100%;
             margin-left: 0rem;
-         
         }
     }
-
-    
 }
 
 @mixin reveal-btn($sectionName) {
@@ -127,9 +122,7 @@
         border-style: none;
         height: 20px;
         width: 100%;
-    
-        
-        
+
         &--box {
             display: block;
             cursor: pointer;
@@ -138,9 +131,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-    
         }
-    
+
         &--inner {
             display: block;
             position: absolute;
@@ -150,8 +142,7 @@
             align-self: flex-end;
             left: calc(100% - 1.5rem);
             top: calc(100% - 1.5rem / 2);
-            
-    
+
             &:before {
                 content: '';
                 position: absolute;
@@ -161,10 +152,8 @@
                 background-color: inherit;
                 height: inherit;
                 transform: rotateZ(90deg);
-                transition: all .1s ease-in-out; 
-    
+                transition: all 0.1s ease-in-out;
             }
-    
         }
         &--active {
             .#{$sectionName}__reveal-btn--inner {
@@ -175,25 +164,23 @@
             }
         }
 
-        @media only screen and (max-width: $sm-desktop){
+        @media only screen and (max-width: $sm-desktop) {
             display: initial;
         }
     }
-    }
+}
 
-@mixin sectionActiveTablet($name, $height, $top){
+@mixin sectionActiveTablet($name, $height, $top) {
     .#{$name}__frame {
-    
         height: $height;
         width: 100%;
         border-bottom: solid 1px $gray-m;
-        animation: .4s cubic-bezier(.43,.12,.81,.2) 0s 1 reveal;
-
+        animation: 0.4s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 reveal;
     }
 
     .#{$name}__text {
-        animation: 1s cubic-bezier(.43,.12,.81,.2) 0s 1 revealText;
-        position: absolute; 
+        animation: 1s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 revealText;
+        position: absolute;
         visibility: visible;
         top: $top;
         right: 4%;
@@ -201,28 +188,30 @@
     }
 }
 
-
-
-
-@include reveal-btn("exhibitions");
-@include reveal-btn("education");
-@include reveal-btn("contact");
-
-
+@include reveal-btn('exhibitions');
+@include reveal-btn('education');
+@include reveal-btn('contact');
 
 .info {
     grid-area: b;
-    
+
     &__text {
-        text-align: justify;
-        font-size: 1.33rem;
-        margin: 0 4rem;
+        p {
+            text-align: justify;
+            font-size: 1.3rem;
+            // margin: 0 4rem;
+            text-indent: 4rem;
+        }
 
         @media only screen and (max-width: $sm-desktop) {
             margin-top: 9rem;
         }
-        @media only screen and (max-width: $tablet){
+        @media only screen and (max-width: $tablet) {
             margin-top: 0;
+
+            p {
+                font-size: 1.7rem;
+            }
         }
     }
 }
@@ -233,21 +222,17 @@ p {
     font-weight: 300;
     color: $gray-d;
     text-align: right;
-
 }
 
-
-
 .frame {
-        border-top: solid 1px $gray-m;
-        border-bottom: solid 1px $gray-m;
-        border-left: solid 1px $gray-m;
+    border-top: solid 1px $gray-m;
+    border-bottom: solid 1px $gray-m;
+    border-left: solid 1px $gray-m;
 
-        @media only screen and (max-width: $sm-desktop){
-            border-bottom: none;
-            border-right: solid 1px $gray-m;
-        }
-
+    @media only screen and (max-width: $sm-desktop) {
+        border-bottom: none;
+        border-right: solid 1px $gray-m;
+    }
 }
 
 .contact {
@@ -255,55 +240,46 @@ p {
     display: flex;
     position: relative;
 
-    @include about-titles(10rem, "contact", -1.1rem);
-    
-    @media only screen and (max-width: $sm-desktop) {
+    @include about-titles(10rem, 'contact', -1.1rem);
 
+    @media only screen and (max-width: $sm-desktop) {
         &--active {
             @include sectionActiveTablet('contact', 10rem, 37%);
-    
         }
     }
-
 }
-
 
 .exhibitions {
     grid-area: c;
     position: relative;
-    
-    @include about-titles(33rem, "exhibitions", -2.1rem);
+
+    @include about-titles(44rem, 'exhibitions', -2.1rem);
 
     @media only screen and (max-width: $sm-desktop) {
         &--active {
-            @include sectionActiveTablet('exhibitions', 33rem, 11%);
-        
+            @include sectionActiveTablet('exhibitions', 42rem, 11%);
         }
     }
 }
-
-
 
 .education {
     grid-area: d;
     display: flex;
     position: relative;
-    
-    @include about-titles(30rem, "education", -2rem);
+
+    @include about-titles(22rem, 'education', -2rem);
 
     @media only screen and (max-width: $sm-desktop) {
         &--active {
-            @include sectionActiveTablet('education', 30rem, 18%);
-    
+            @include sectionActiveTablet('education', 22rem, 18%);
         }
     }
 }
 
 .portrait {
     grid-area: e;
-    
-    picture {
 
+    picture {
         img {
             height: auto;
             width: 100%;
@@ -311,10 +287,13 @@ p {
         }
     }
 
-    @media only screen and (max-width: $sm-desktop){
+    @media only screen and (max-width: $sm-desktop) {
         margin: 3rem 14rem;
     }
-    @media only screen and (max-width: 1050px){
-        margin: 3rem 9rem;
+    @media only screen and (max-width: 1050px) {
+        margin: 3rem 8rem;
+    }
+    @media only screen and (max-width: 650px) {
+        margin: 3rem 0rem;
     }
 }

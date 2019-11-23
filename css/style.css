@@ -52,7 +52,7 @@ body {
   grid-column: 2/-1;
   height: 100vh;
   position: relative;
-  overflow-y: scroll;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: 0fr 100%; }
   @media only screen and (max-width: 768px) {
@@ -87,19 +87,32 @@ body {
 .about-content {
   animation: 0.4s ease-out 0s 1 fadeIn;
   height: 100vh;
-  width: 100%;
-  padding: 10rem 0;
+  width: 70%;
+  padding: 10rem 0 10rem 18rem;
   font-size: 1.5rem;
   color: #b0b0b0;
   display: grid;
   grid-template: 'a b b' 22rem 'c d e' 40rem / 1.2fr 1fr 1fr;
   padding-top: 17rem;
-  row-gap: 2rem; }
+  row-gap: 5rem; }
+  @media only screen and (max-width: 1650px) {
+    .about-content {
+      width: 90%;
+      padding: 10rem 0 9rem 7rem; } }
   @media only screen and (max-width: 1200px) {
     .about-content {
       grid-template: 'b' min-content 'e' min-content 'c' min-content 'd' min-content 'a' min-content / 1fr;
       padding-top: 3rem;
-      height: auto; } }
+      height: auto;
+      width: 70vw;
+      padding: 4rem 6rem; } }
+  @media only screen and (max-width: 768px) {
+    .about-content {
+      grid-template: 'b' min-content 'e' min-content 'c' min-content 'd' min-content 'a' min-content / 1fr;
+      padding-top: 3rem;
+      height: auto;
+      width: 100vw;
+      padding: 4rem 6rem; } }
 
 .utils {
   background-color: transparent; }
@@ -181,7 +194,7 @@ body {
       background-color: inherit;
       height: inherit;
       transform: rotateZ(90deg);
-      transition: all .1s ease-in-out; }
+      transition: all 0.1s ease-in-out; }
   .exhibitions__reveal-btn--active .exhibitions__reveal-btn--inner:before {
     transform: rotateZ(0);
     opacity: 0; }
@@ -225,7 +238,7 @@ body {
       background-color: inherit;
       height: inherit;
       transform: rotateZ(90deg);
-      transition: all .1s ease-in-out; }
+      transition: all 0.1s ease-in-out; }
   .education__reveal-btn--active .education__reveal-btn--inner:before {
     transform: rotateZ(0);
     opacity: 0; }
@@ -269,7 +282,7 @@ body {
       background-color: inherit;
       height: inherit;
       transform: rotateZ(90deg);
-      transition: all .1s ease-in-out; }
+      transition: all 0.1s ease-in-out; }
   .contact__reveal-btn--active .contact__reveal-btn--inner:before {
     transform: rotateZ(0);
     opacity: 0; }
@@ -279,16 +292,18 @@ body {
 
 .info {
   grid-area: b; }
-  .info__text {
+  .info__text p {
     text-align: justify;
-    font-size: 1.33rem;
-    margin: 0 4rem; }
-    @media only screen and (max-width: 1200px) {
-      .info__text {
-        margin-top: 9rem; } }
-    @media only screen and (max-width: 768px) {
-      .info__text {
-        margin-top: 0; } }
+    font-size: 1.3rem;
+    text-indent: 4rem; }
+  @media only screen and (max-width: 1200px) {
+    .info__text {
+      margin-top: 9rem; } }
+  @media only screen and (max-width: 768px) {
+    .info__text {
+      margin-top: 0; }
+      .info__text p {
+        font-size: 1.7rem; } }
 
 p {
   font-size: 1.15rem;
@@ -340,8 +355,7 @@ p {
     .contact {
       flex-direction: column;
       height: min-content;
-      margin-bottom: 2rem;
-      padding: 0 4rem; }
+      margin-bottom: 2rem; }
       .contact__description {
         flex-direction: column;
         justify-content: center;
@@ -375,7 +389,7 @@ p {
   grid-area: c;
   position: relative;
   display: flex;
-  height: 33rem;
+  height: 44rem;
   align-items: center; }
   .exhibitions__text {
     margin-left: auto;
@@ -404,8 +418,7 @@ p {
     .exhibitions {
       flex-direction: column;
       height: min-content;
-      margin-bottom: 2rem;
-      padding: 0 4rem; }
+      margin-bottom: 2rem; }
       .exhibitions__description {
         flex-direction: column;
         justify-content: center;
@@ -423,7 +436,7 @@ p {
         margin-left: 0rem; } }
   @media only screen and (max-width: 1200px) {
     .exhibitions--active .exhibitions__frame {
-      height: 33rem;
+      height: 42rem;
       width: 100%;
       border-bottom: solid 1px #b0b0b0;
       animation: 0.4s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 reveal; }
@@ -440,7 +453,7 @@ p {
   display: flex;
   position: relative;
   display: flex;
-  height: 30rem;
+  height: 22rem;
   align-items: center; }
   .education__text {
     margin-left: auto;
@@ -469,8 +482,7 @@ p {
     .education {
       flex-direction: column;
       height: min-content;
-      margin-bottom: 2rem;
-      padding: 0 4rem; }
+      margin-bottom: 2rem; }
       .education__description {
         flex-direction: column;
         justify-content: center;
@@ -488,7 +500,7 @@ p {
         margin-left: 0rem; } }
   @media only screen and (max-width: 1200px) {
     .education--active .education__frame {
-      height: 30rem;
+      height: 22rem;
       width: 100%;
       border-bottom: solid 1px #b0b0b0;
       animation: 0.4s cubic-bezier(0.43, 0.12, 0.81, 0.2) 0s 1 reveal; }
@@ -511,7 +523,10 @@ p {
       margin: 3rem 14rem; } }
   @media only screen and (max-width: 1050px) {
     .portrait {
-      margin: 3rem 9rem; } }
+      margin: 3rem 8rem; } }
+  @media only screen and (max-width: 650px) {
+    .portrait {
+      margin: 3rem 0rem; } }
 
 .projects {
   display: grid;
@@ -586,10 +601,31 @@ p {
     object-position: -382px;
     width: 145%;
     height: 145%; }
+    @media only screen and (max-width: 1350px) {
+      .preview--6 img {
+        object-position: -330px;
+        width: 149%;
+        height: 149%; } }
   .preview--7 img {
     object-position: 0px;
     width: 145%;
     height: 145%; }
+  .preview--8 img {
+    object-position: -38px;
+    width: 125%;
+    height: 125%; }
+    @media only screen and (max-width: 1350px) {
+      .preview--8 img {
+        object-position: -16px; } }
+  .preview--9 img {
+    object-position: 19px;
+    width: 130%;
+    height: 130%; }
+    @media only screen and (max-width: 1350px) {
+      .preview--9 img {
+        object-position: 0px;
+        height: 150%;
+        width: 150%; } }
   .preview--11 img {
     object-position: -22px;
     width: 155%;
@@ -610,7 +646,7 @@ p {
   height: 117%;
   width: 100%;
   background: linear-gradient(to right, rgba(44, 63, 104, 0.7) 0%, rgba(125, 185, 232, 0) 100%); }
-  @media only screen and (max-width: 1350px) {
+  @media only screen and (max-width: 1700px) {
     .over-picture {
       font-size: 22px; } }
   @media only screen and (max-width: 768px) {
@@ -687,7 +723,7 @@ p {
   font-size: 1.2rem;
   font-family: "Martel", serif;
   text-align: justify;
-  margin: 4rem 8rem 8rem 8rem; }
+  margin: 4rem 20rem 8rem; }
   @media only screen and (max-width: 1200px) {
     .project__header-paragraph {
       font-size: 1.4rem;
@@ -717,6 +753,9 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media only screen and (min-width: 1350px) {
+    .project__image-group {
+      padding: 0 16rem; } }
   .project__image-group picture:last-child {
     margin-bottom: 8rem; }
   .project__image-group picture {
@@ -801,9 +840,25 @@ p {
     text-align: left;
     margin: 4rem 0 2rem 10rem;
     padding-bottom: 4px;
-    border-bottom: solid 1px #c4c4c4; }
+    width: max-content;
+    position: relative; }
+    .nav--left::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 120px;
+      width: 5vw;
+      height: 1px;
+      background-color: black;
+      opacity: 0.4; }
+      @media only screen and (max-width: 1350px) {
+        .nav--left::after {
+          left: 91px;
+          width: 4.5vw; } }
     .nav--left:last-child {
       border-bottom: none; }
+      .nav--left:last-child::after {
+        opacity: 0; }
     @media only screen and (max-width: 768px) {
       .nav--left {
         display: none; } }
@@ -815,8 +870,7 @@ p {
       display: block;
       margin-left: 5rem !important;
       margin-top: 3.5rem !important;
-      padding-top: 3.5rem;
-      border-top: 1px dotted #c4c4c4; } }
+      padding-top: 3.5rem; } }
 
 .nav-button {
   text-decoration: none;
@@ -849,7 +903,7 @@ p {
 
 .nav-frame {
   position: absolute;
-  height: 43rem;
+  height: 45rem;
   width: 1rem;
   top: 5rem;
   left: 4rem;

@@ -40,10 +40,8 @@
     grid-column: 2/-1;
     height: 100vh;
     position: relative;
-    overflow-y: scroll;
-
+    overflow-x: hidden;
     display: grid;
-
     grid-template-columns: 0fr 100%;
 
     @media only screen and (max-width: $tablet) {
@@ -55,7 +53,6 @@
 }
 
 .main-content-wrapper {
-    //   grid-column: 2 / 3;
     height: 100vh;
 
     @media only screen and (max-width: $tablet) {
@@ -88,26 +85,36 @@
 .about-content {
     animation: 0.4s ease-out 0s 1 fadeIn;
     height: 100vh;
-    width: 100%;
-    padding: 10rem 0;
-
+    width: 70%;
+    padding: 10rem 0 10rem 18rem;
     font-size: 1.5rem;
     color: $gray-m;
-
     display: grid;
-
     grid-template:
         'a b b' 22rem
         'c d e' 40rem / 1.2fr 1fr 1fr;
-
     padding-top: 17rem;
-    row-gap: 2rem;
+    row-gap: 5rem;
+
+    @media only screen and (max-width: 1650px) {
+        width: 90%;
+        padding: 10rem 0 9rem 7rem;
+    }
 
     @media only screen and (max-width: $sm-desktop) {
         grid-template: 'b' min-content 'e' min-content 'c' min-content 'd' min-content 'a' min-content / 1fr;
-
         padding-top: 3rem;
         height: auto;
+        width: 70vw;
+        padding: 4rem 6rem;
+    }
+    
+    @media only screen and (max-width: $tablet) {
+        grid-template: 'b' min-content 'e' min-content 'c' min-content 'd' min-content 'a' min-content / 1fr;
+        padding-top: 3rem;
+        height: auto;
+        width: 100vw;
+        padding: 4rem 6rem;
     }
 }
 

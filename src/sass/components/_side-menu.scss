@@ -92,10 +92,29 @@
         text-align: left;
         margin: 4rem 0 2rem 10rem;
         padding-bottom: 4px;
-        border-bottom: solid 1px $gray-l;
+        width: max-content;
+        position: relative;
 
+        &::after {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: 120px;
+            width: 5vw;
+            height: 1px;
+            background-color: black;
+            opacity: 0.4;
+
+            @media only screen and (max-width: $s-desktop) {
+                left: 91px;
+                width: 4.5vw;
+            }
+        }
         &:last-child {
             border-bottom: none;
+            &::after {
+                opacity: 0;
+            }
         }
 
         @media only screen and (max-width: $tablet) {
@@ -113,8 +132,6 @@
             margin-left: 5rem !important;
             margin-top: 3.5rem !important;
             padding-top: 3.5rem;
-
-            border-top: 1px dotted $gray-l;
         }
     }
 }
@@ -161,7 +178,7 @@
 .nav-frame {
     position: absolute;
 
-    height: 43rem;
+    height: 45rem;
     width: 1rem;
 
     top: 5rem;
