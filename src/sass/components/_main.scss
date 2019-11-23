@@ -75,7 +75,7 @@
     &--1 {
         img {
             object-position: -70px;
-            width: 100%;
+            width: 130%;
             height: 100%;
         }
     }
@@ -86,9 +86,9 @@
             height: 145%;
 
             @media only screen and (max-width: $s-desktop) {
-                object-position: -330px;
+                object-position: -490px -80px;
                 width: 149%;
-                height: 149%;
+                height: 188%;
             }
         }
     }
@@ -98,17 +98,25 @@
             object-position: 0px;
             width: 145%;
             height: 145%;
+
+            @media only screen and (max-width: $s-desktop) {
+                height: 165%;
+            }
         }
     }
 
     &--8 {
         img {
-            object-position: -38px;
-            width: 125%;
+            object-position: -30px;
+            width: 185%;
             height: 125%;
 
-            @media only screen and (max-width: $s-desktop) {
-                object-position: -16px;
+            @media only screen and (min-width: 450px) {
+                object-position: -56px -30px;
+                height: 180%;
+            }
+            @media only screen and (min-width: $s-desktop) {
+                object-position: -38px;
             }
         }
     }
@@ -120,9 +128,9 @@
             height: 130%;
 
             @media only screen and (max-width: $s-desktop) {
-                object-position: 0px;
-                height: 150%;
-                width: 150%;
+                object-position: -30px;
+                height: 200%;
+                width: 180%;
             }
         }
     }

@@ -69,7 +69,6 @@
 
 .project-content {
     animation: 0.4s ease-out 0s 1 fadeIn;
-    height: 200vh;
     display: flex;
     flex-direction: column;
     margin: 0 0.7rem;
@@ -94,11 +93,11 @@
         'a b b' 22rem
         'c d e' 40rem / 1.2fr 1fr 1fr;
     padding-top: 17rem;
-    row-gap: 3rem;
+    row-gap: 2rem;
 
     @media only screen and (max-width: 1650px) {
         width: 90%;
-        padding: 10rem 0 9rem 7rem;
+        padding: 6rem 0 9rem 7rem;
     }
 
     @media only screen and (max-width: $sm-desktop) {

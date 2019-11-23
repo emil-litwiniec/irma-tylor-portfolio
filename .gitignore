@@ -1,2 +1,6 @@
+# /src
 /resources
 /node_modules
+style.comp.css
+style.comp.css.map
+style.prefix.css
